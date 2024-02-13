@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1572183038168-fd699d68dbc4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max')no-repeat center center/cover;
+}
+.sun{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(255, 82, 19);
+    box-shadow: 0 0 30px rgb(255, 246, 126);
+    border-radius:50%;
+    position: absolute;
+    transition: rotate .5s infinite linear;
+}
+.earth{
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    border-color:white transparent transparent transparent;
+    border-width: 1px 1px 0 0;
+    position: relative;
+    border-radius: 50%;
+    top: -75%;
+    left: -75%;
+    margin: 0;
+    animation: rotate 3.5s infinite linear;
+}
+.earth::before{
+    content: "";
+    width: 80px;
+    height: 80px;
+    background-color: aqua;
+    box-shadow: 0px 0 20px white;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border-radius: 50%;
+    /* animation: rotate .5s infinite linear; */
+}
+.moon{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px 1px 0 0;
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    animation: rotate 2.5s infinite linear;
+}
+.moon::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 20px white;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
